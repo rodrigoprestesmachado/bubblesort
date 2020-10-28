@@ -14,15 +14,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package edu.ifrs.vvs;
 
 /**
- * Bubble Sort App
+ * Bubble Sort App.
  */
 public final class App {
 
+    private App() {
+
+    }
+
     /**
-     * Sorts the array
+     * Sorts the array.
      *
      * @param args The arguments of the program
      */

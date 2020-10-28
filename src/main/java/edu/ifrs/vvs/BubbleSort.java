@@ -14,12 +14,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package edu.ifrs.vvs;
 
 import java.util.Scanner;
 
 /**
- * Bubble Sort
+ * Bubble Sort.
  */
 public class BubbleSort {
 
@@ -50,6 +51,11 @@ public class BubbleSort {
         }
     }
 
+    /**
+     * Reads the values.
+     *
+     * @return array of int
+     */
     public int[] read() {
         int size = this.size();
         int[] values = new int[size];
@@ -60,12 +66,22 @@ public class BubbleSort {
         return values;
     }
 
+    /**
+     * Reads the size of the array.
+     *
+     * @return the size of the array
+     */
     private int size() {
         System.out.print("Size of array: ");
         int size = Integer.valueOf(this.scanner.next());
         return size;
     }
 
+    /**
+     * Shows the array.
+     *
+     * @param values the array
+     */
     public void show(int... values) {
         for (int num : values) {
             System.out.print(num + " ");
