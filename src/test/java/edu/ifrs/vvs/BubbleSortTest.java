@@ -2,17 +2,17 @@ package edu.ifrs.vvs;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
  * Unit test for simple App.
  */
 public class BubbleSortTest {
     /**
-     * Testing if the numbers were sorted
+     * Testing if the numbers were sorted.
      */
     @Test
-    void numberSorted(){
+    void numberSorted() {
         BubbleSort algoritm = new BubbleSort();
         int[] initial = {5, 3, 1};   
         algoritm.sort(initial);
@@ -21,10 +21,10 @@ public class BubbleSortTest {
     }    
 
     /**
-     * Testing if negative number were sorted
+     * Testing if negative number were sorted.
      */
     @Test
-    void numberSortedWithNegativeNumber(){
+    void numberSortedWithNegativeNumber() {
         BubbleSort algoritm = new BubbleSort();
         int[] initial = {-5, 3, 1};
         algoritm.sort(initial);
@@ -33,10 +33,10 @@ public class BubbleSortTest {
     }        
 
     /**
-     * Testing if repeated numbers were considered
+     * Testing if repeated numbers were considered.
      */
     @Test
-    void numberSortedWithRepeatedNumber(){
+    void numberSortedWithRepeatedNumber() {
         BubbleSort algoritm = new BubbleSort();
         int[] initial = {-15, 10, 10, 2, 2};
         algoritm.sort(initial);
