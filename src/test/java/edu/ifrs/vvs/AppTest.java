@@ -31,6 +31,7 @@ public class AppTest {
     /**
      * Ordena valores únicos.
      */
+    @SuppressWarnings("checkstyle:magicnumber")
     @Test
     public void ordenaUnicos() {
         int[] ordenado = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -42,6 +43,7 @@ public class AppTest {
     /**
      * Ordena sem valores.
      */
+    @SuppressWarnings("checkstyle:magicnumber")
     @Test
     public void ordenaNulo() {
         int[] ordenado = {};
@@ -53,6 +55,7 @@ public class AppTest {
     /**
      * Ordena com alguns valores repetidos.
      */
+    @SuppressWarnings("checkstyle:magicnumber")
     @Test
     public void ordenaRepetidos() {
         int[] ordenado = {1, 2, 2, 2, 2, 6, 7, 8, 9, 10};
@@ -64,6 +67,7 @@ public class AppTest {
     /**
      * Ordena incluindo valores negativos.
      */
+    @SuppressWarnings("checkstyle:magicnumber")
     @Test
     public void ordenaComNegativos() {
         int[] ordenado = {-6, -3, 0, 1, 7, 8, 9, 10, 15, 17};
@@ -75,6 +79,7 @@ public class AppTest {
     /**
      * Ordena com todos valores iguais.
      */
+    @SuppressWarnings("checkstyle:magicnumber")
     @Test
     public void ordenaIguais() {
         int[] ordenado = {3, 3, 3, 3, 3, 3, 3, 3, 3, 3};
@@ -86,6 +91,7 @@ public class AppTest {
     /**
      * Ordena um valor.
      */
+    @SuppressWarnings("checkstyle:magicnumber")
     @Test
     public void ordenaUmValor() {
         int[] ordenado = {6};
