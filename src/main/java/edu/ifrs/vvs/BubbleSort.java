@@ -17,6 +17,7 @@
 
 package edu.ifrs.vvs;
 
+import java.io.InputStream;
 import java.util.Scanner;
 
 /**
@@ -72,8 +73,9 @@ public class BubbleSort {
      * @return the size of the array
      */
     private int size() {
-        System.out.print("Size of array: ");
+        System.out.print("Size of array:");
         int size = Integer.valueOf(this.scanner.next());
+
         return size;
     }
 
@@ -86,5 +88,13 @@ public class BubbleSort {
         for (int num : values) {
             System.out.print(num + " ");
         }
+    }
+
+    /**
+     * Configura o stream a ser usado.
+     * @param inputStream novo stream
+     */
+    public void setScanner(InputStream inputStream) {
+        this.scanner = new Scanner(inputStream);
     }
 }
