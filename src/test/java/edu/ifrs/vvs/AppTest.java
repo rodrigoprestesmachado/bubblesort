@@ -19,17 +19,23 @@ package edu.ifrs.vvs;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 /**
- * Unit test for simple App.
+ * Unit test for BubbleSort.
  */
+@SuppressWarnings("checkstyle:magicnumber")
 class AppTest {
-    /**
-     * Rigorous Test.
-     */
+
+    private BubbleSort bubbleSort = new BubbleSort();
+
     @Test
-    void testApp() {
-        assertEquals(1, 1);
+    void shouldOrderValuesAsExpected() {
+        int[] values = {10, -1, 1, 5, 5, 0, 6};
+        int[] expectedOrderedValues = {-1, 0, 1, 5, 5, 6, 10};
+
+        bubbleSort.sort(values);
+
+        assertArrayEquals(expectedOrderedValues, values);
     }
 }
