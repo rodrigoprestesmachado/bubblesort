@@ -118,7 +118,7 @@ class AppTest {
         String inputUsuario = "G 6 2 4 ";
         InputStream mockStream = new ByteArrayInputStream(inputUsuario.getBytes());
         customBs = new BubbleSortCustomStdIn(mockStream);
-        assertDoesNotThrow(() -> {
+        assertThrows(NumberFormatException.class, () -> {
             valoresInformados = this.customBs.read();
         });
     }
@@ -276,7 +276,7 @@ class AppTest {
         String inputUsuario = "2 A 7";
         InputStream mockStream = new ByteArrayInputStream(inputUsuario.getBytes());
         customBs = new BubbleSortCustomStdIn(mockStream);
-        assertDoesNotThrow(() -> {
+        assertThrows(NumberFormatException.class, () -> {
             valoresInformados = this.customBs.read();
             customBs.sort(this.valoresInformados);
             customBs.show(this.valoresInformados);
@@ -297,7 +297,7 @@ class AppTest {
         String inputUsuario = "2 0.000000000000001 0";
         InputStream mockStream = new ByteArrayInputStream(inputUsuario.getBytes());
         customBs = new BubbleSortCustomStdIn(mockStream);
-        assertDoesNotThrow(() -> {
+        assertThrows(NumberFormatException.class, () -> {
             valoresInformados = this.customBs.read();
             customBs.sort(this.valoresInformados);
             customBs.show(this.valoresInformados);
@@ -318,7 +318,7 @@ class AppTest {
         String inputUsuario = "2 -2147483649 2147483648";
         InputStream mockStream = new ByteArrayInputStream(inputUsuario.getBytes());
         customBs = new BubbleSortCustomStdIn(mockStream);
-        assertDoesNotThrow(() -> {
+        assertThrows(NumberFormatException.class, () -> {
             valoresInformados = this.customBs.read();
             customBs.sort(this.valoresInformados);
             customBs.show(this.valoresInformados);
