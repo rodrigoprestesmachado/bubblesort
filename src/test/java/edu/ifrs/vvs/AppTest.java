@@ -32,4 +32,30 @@ class AppTest {
     void testApp() {
         assertEquals(1, 1);
     }
+
+    //Teste com uma lista já ordenada
+    @Test
+    void sortSorted() {
+        returnExpected(new int[]{0, 1}, new int[]{0, 1});
+    }
+    //Teste com uma lista não ordenada
+    @Test
+    void sortUnsorted() {
+        returnExpected(new int[]{0, 1}, new int[]{1, 0});
+    }
+    //Teste para verificar uma lista parcialmente desordenada
+    @Test
+    void sortPartiallyUnsorted(){
+        returnExpected(new int[]{0, 1, 2, 3}, new int[]{0, 2, 1, 3});
+    }
+
+
+    //Método para verificar se o método sort traz o resultado esperado
+    private void returnExpected(int[] expected, int[] input) {
+        BubbleSort bs = new BubbleSort();
+        bs.sort(input);
+        assertArrayEquals(expected, input);
+    }
+
+
 }
