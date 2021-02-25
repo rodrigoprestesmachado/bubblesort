@@ -18,6 +18,7 @@ package edu.ifrs.vvs;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
@@ -40,9 +41,6 @@ class AppTest {
         int[] v2 = {1,2,3,4,5};
 
         this.obj.sort(v1);
-
-        for(int i = 0; i < v1.length; i++){
-            assertEquals(v2[i], v1[i]);
-        }        
+        assertArrayEquals(v1, v2);
     }
 }
