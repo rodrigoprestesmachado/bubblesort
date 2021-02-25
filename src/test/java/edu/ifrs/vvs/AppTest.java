@@ -14,22 +14,35 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package edu.ifrs.vvs;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+
 /**
  * Unit test for simple App.
  */
 class AppTest {
+    private BubbleSort obj = new BubbleSort();
     /**
      * Rigorous Test.
      */
     @Test
     void testApp() {
         assertEquals(1, 1);
+    }
+
+    @Test
+    void testSort(){
+        int[] v1 = {1,3,2,5,4};
+        int[] v2 = {1,2,3,4,5};
+
+        this.obj.sort(v1);
+
+        for(int i = 0; i < v1.length; i++){
+            assertEquals(v2[i], v1[i]);
+        }        
     }
 }
