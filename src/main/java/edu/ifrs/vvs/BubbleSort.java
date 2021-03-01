@@ -35,6 +35,7 @@ public class BubbleSort {
      */
     public void sort(int... v) {
         // for utilizado para controlar a quantidade de vezes que o vetor será ordenado.
+        if (v != null) {
         for (int i = 0; i < v.length - 1; i++) {
             // for utilizado para ordenar o vetor.
             for (int j = 0; j < v.length - 1 - i; j++) {
@@ -48,6 +49,7 @@ public class BubbleSort {
                     v[j + 1] = aux;
                 }
             }
+        }
         }
     }
 
