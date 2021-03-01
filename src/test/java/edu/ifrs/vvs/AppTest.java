@@ -16,7 +16,6 @@ package edu.ifrs.vvs;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -31,17 +30,32 @@ class AppTest {
     /**
      * Rigorous Test.
      */
+    private static final Integer ZERO = 0;
+    private static final Integer MENOS_DOZE = -12;
+    private static final Integer MENOS_OITO = -8;
+    private static final Integer MENOS_SEIS = -6;
+    private static final Integer MENOS_UM = -1;
+    private static final Integer UM = 1;
+    private static final Integer DOIS = 2;
+    private static final Integer TRES = 3;
+    private static final Integer QUATRO = 4;
+    private static final Integer CINCO = 5;
+    private static final Integer SEIS = 6;
+    private static final Integer SETE = 7;
+    private static final Integer OITO = 8;
+    private static final Integer NOVE = 9;
+    private static final Integer DEZ = 10;
 
     private final BubbleSort bubbleSort = new BubbleSort();
-    List<Integer> array = new ArrayList<>();
+    private final List<Integer> array = new ArrayList<>();
 
     @BeforeEach
     void init() {
-        array.add(2);
-        array.add(8);
-        array.add(3);
-        array.add(4);
-        array.add(9);
+        array.add(DOIS);
+        array.add(OITO);
+        array.add(TRES);
+        array.add(QUATRO);
+        array.add(NOVE);
     }
 
     @AfterEach
@@ -54,7 +68,7 @@ class AppTest {
     void testPositiveNumbers() {
         int[] test = new int[array.size()];
 
-        for (int i = 0; i < array.size(); i++) {
+        for (int i = ZERO; i < array.size(); i++) {
             test[i] = array.get(i);
         }
 
@@ -64,13 +78,13 @@ class AppTest {
                                      .map(Integer::new)
                                      .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
 
-        assertEquals(5, result.size());
+        assertEquals(CINCO, result.size());
 
-        assertEquals(2, result.get(0));
-        assertEquals(3, result.get(1));
-        assertEquals(4, result.get(2));
-        assertEquals(8, result.get(3));
-        assertEquals(9, result.get(4));
+        assertEquals(DOIS, result.get(ZERO));
+        assertEquals(TRES, result.get(UM));
+        assertEquals(QUATRO, result.get(DOIS));
+        assertEquals(OITO, result.get(TRES));
+        assertEquals(NOVE, result.get(QUATRO));
     }
 
     @Test
@@ -94,30 +108,30 @@ class AppTest {
                                      .map(Integer::new)
                                      .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
 
-        assertEquals(10, result.size());
+        assertEquals(DEZ, result.size());
 
-        assertEquals(-12, result.get(0));
-        assertEquals(-8, result.get(1));
-        assertEquals(-6, result.get(2));
-        assertEquals(-1, result.get(3));
-        assertEquals(0, result.get(4));
+        assertEquals(MENOS_DOZE, result.get(ZERO));
+        assertEquals(MENOS_OITO, result.get(UM));
+        assertEquals(MENOS_SEIS, result.get(DOIS));
+        assertEquals(MENOS_UM, result.get(TRES));
+        assertEquals(ZERO, result.get(QUATRO));
 
-        assertEquals(2, result.get(5));
-        assertEquals(3, result.get(6));
-        assertEquals(4, result.get(7));
-        assertEquals(8, result.get(8));
-        assertEquals(9, result.get(9));
+        assertEquals(DOIS, result.get(CINCO));
+        assertEquals(TRES, result.get(SEIS));
+        assertEquals(QUATRO, result.get(SETE));
+        assertEquals(OITO, result.get(OITO));
+        assertEquals(NOVE, result.get(NOVE));
     }
 
     @Test
     @DisplayName("Testing BubbleSort with duplicate numbers")
     void testDuplicateNumbers() {
-        array.add(9);
-        array.add(9);
+        array.add(NOVE);
+        array.add(NOVE);
 
         int[] test = new int[array.size()];
 
-        for (int i = 0; i < array.size(); i++) {
+        for (int i = ZERO; i < array.size(); i++) {
             test[i] = array.get(i);
         }
 
@@ -127,14 +141,14 @@ class AppTest {
                                      .map(Integer::new)
                                      .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
 
-        assertEquals(7, result.size());
+        assertEquals(SETE, result.size());
 
-        assertEquals(2, result.get(0));
-        assertEquals(3, result.get(1));
-        assertEquals(4, result.get(2));
-        assertEquals(8, result.get(3));
-        assertEquals(9, result.get(4));
-        assertEquals(9, result.get(5));
-        assertEquals(9, result.get(6));
+        assertEquals(DOIS, result.get(ZERO));
+        assertEquals(TRES, result.get(UM));
+        assertEquals(QUATRO, result.get(DOIS));
+        assertEquals(OITO, result.get(TRES));
+        assertEquals(NOVE, result.get(QUATRO));
+        assertEquals(NOVE, result.get(CINCO));
+        assertEquals(NOVE, result.get(SEIS));
     }
 }
