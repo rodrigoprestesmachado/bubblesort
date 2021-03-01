@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
- * Test of bubblesort class
+ * Test of bubblesort class.
  */
 public class BubbleSortTest {
     private BubbleSort bubblesort = new BubbleSort();
