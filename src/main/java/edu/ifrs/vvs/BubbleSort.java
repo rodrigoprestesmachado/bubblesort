@@ -88,7 +88,4 @@ public class BubbleSort {
         }
     }
 
-    public int[] getValuesSorted(int... values){
-        return values;
-    }
 }
