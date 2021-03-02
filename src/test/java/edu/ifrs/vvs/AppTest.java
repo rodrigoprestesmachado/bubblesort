@@ -90,11 +90,11 @@ class AppTest {
     @Test
     @DisplayName("Testing BubbleSort with positive and negative numbers")
     void testPositiveAndNegativeNumbers() {
-        array.add(-1);
-        array.add(-6);
-        array.add(-8);
-        array.add(-12);
-        array.add(0);
+        array.add(MENOS_UM);
+        array.add(MENOS_SEIS);
+        array.add(MENOS_OITO);
+        array.add(MENOS_DOZE);
+        array.add(ZERO);
 
         int[] test = new int[array.size()];
 
