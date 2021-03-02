@@ -33,6 +33,7 @@ class BubbleSortTest {
 
     @Test
     @DisplayName("Ordenação de números randômicos")
+    @SuppressWarnings("checkstyle:magicnumber")
     public void sortWithRandomNumbers() {
         int[] arrayInicial = new int[] {2, -6, 3, 78, 26, 3, 5, 12};
         int[] arrayOrdenado = new int[] {-6, 2, 3, 3, 5, 12, 26, 78 };
@@ -42,6 +43,7 @@ class BubbleSortTest {
 
     @Test
     @DisplayName("Ordenação de números iguais")
+    @SuppressWarnings("checkstyle:magicnumber")
     public void sortWithEqualNumbers() {
         int[] arrayInicial = new int[] {2, 2, 2, 2, 2};
         int[] arrayOrdenado = new int[] {2, 2, 2, 2, 2};
@@ -51,6 +53,7 @@ class BubbleSortTest {
 
     @Test
     @DisplayName("Ordenação de array vazio")
+    @SuppressWarnings("checkstyle:magicnumber")
     public void sortWithEmptyArray() {
         int[] arrayInicial = new int[] {};
         int[] arrayOrdenado = new int[] {};
