@@ -39,6 +39,7 @@ class AppTest {
 
 
     @Test
+    @SuppressWarnings("checkstyle:magicnumber")
     @DisplayName("Deve retornar na ordem certa")
     void testaOrdem() {
         BubbleSort bs = new BubbleSort();
