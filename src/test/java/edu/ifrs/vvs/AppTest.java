@@ -20,13 +20,14 @@ package edu.ifrs.vvs;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertAll;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Unit test for simple App.
  */
+
 class AppTest {
     /**
      * Rigorous Test.
@@ -41,19 +42,21 @@ class AppTest {
      * Test of bubblesort class.
      */
     @Test
-    @SuppressWarnings("checkstyle:magicnumber")
+    @SuppressWarnings("checkstyle:magicnumber, linelength")
     @DisplayName("Deve retornar na ordem certa")
     void testaOrdem() {
         BubbleSort bs = new BubbleSort();
-        int [] firstValue = {10, 3, 1};
-        int [] firstExpected = {1, 3, 10};
-        int [] thirdExpected = {8, 20, 22, 33, 66, 77, 112, 8712, 333333};
-        int [] secondValue = {5, 30, 999, 1, 222, 9, 10};
-        int [] secondExpected = {1, 5, 9, 10, 30, 222, 999};
-        int [] thirdValue = {8, 20, 33, 66, 77, 22, 333333, 112, 8712};
+        int[] firstValue = {10, 3, 1};
+        int[] firstExpected = {1, 3, 10};
+        int[] thirdExpected = {8, 20, 22, 33, 66, 77, 112, 8712, 333333};
+        int[] secondValue = {5, 30, 999, 1, 222, 9, 10};
+        int[] secondExpected = {1, 5, 9, 10, 30, 222, 999};
+        int[] thirdValue = {8, 20, 33, 66, 77, 22, 333333, 112, 8712};
         bs.sort(firstValue);
         bs.sort(secondValue);
         bs.sort(thirdValue);
-        assertAll(() -> assertArrayEquals(firstExpected, firstValue), () -> assertArrayEquals(secondExpected, secondValue), () -> assertArrayEquals(thirdExpected, thirdValue));
+        assertAll(() -> assertArrayEquals(firstExpected, firstValue),
+            () -> assertArrayEquals(secondExpected, secondValue),
+            () -> assertArrayEquals(thirdExpected, thirdValue));
     }
 }
