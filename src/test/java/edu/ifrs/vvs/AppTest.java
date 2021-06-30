@@ -30,12 +30,12 @@ class AppTest {
      * Rigorous Test.
      */
     private BubbleSort ordenador = new BubbleSort();
-    
+
     @Test
     void testApp() {
         assertEquals(1, 1);
     }
-    
+
     @Test
     void testeVetorVazio() {
         int[] valores = {};
