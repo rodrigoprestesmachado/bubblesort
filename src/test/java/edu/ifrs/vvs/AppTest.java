@@ -30,6 +30,7 @@ class AppTest {
      * Rigorous Test.
      */
     private BubbleSort ordenador = new BubbleSort();
+    
     @Test
     void testApp() {
         assertEquals(1, 1);
@@ -44,16 +45,16 @@ class AppTest {
     @Test
     @SuppressWarnings("checkstyle:magicnumber")
     void testeVetorUmElemento() {
-        int[] valores = { 33 };
+        int[] valores = {33};
         ordenador.sort(valores);
-        assertArrayEquals(new int[] { 33 }, valores);
+        assertArrayEquals(new int[] {33}, valores);
     }
 
     @Test
     @SuppressWarnings("checkstyle:magicnumber")
     void testeOrdenacao() {
-        int[] valores = { 44, 77, 3, 26, 16 };
-        int[] ordemEsperada = { 3, 16, 26, 44, 77 };
+        int[] valores = {44, 77, 3, 26, 16};
+        int[] ordemEsperada = {3, 16, 26, 44, 77};
         ordenador.sort(valores);
         assertArrayEquals(ordemEsperada, valores);
 
