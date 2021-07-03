@@ -20,7 +20,6 @@ package edu.ifrs.vvs;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Unit test for simple App.
@@ -29,23 +28,31 @@ class AppTest {
 
     private static final int[] POS_ORD = {0, 2, 6, 8};
     private static final int[] POS_DESORD = {8, 0, 2, 6};
-    private static final int SMALL_NEGATIVE = -3;
-    private static final int SMALL_POSITIVE = 3;
+    private static final int[] NEG_ORD = {-12, -7, -1, 0};
+    private static final int[] NEG_DESORD =  {-7, -12, 0, -1};
+    private static final int[] GRANDE_DESORD = {987987987, 10, 0, 1, -1, -83748332};
+    private static final int[] GRANDE_ORD =   {-83748332, -1, 0, 1, 10, 987987987};
 
     private final BubbleSort bSorter = new BubbleSort();
 
-    /**
-     * Rigorous Test.
-     */
     @Test
-    void testApp() {
-        assertEquals(1, 1);
-    }
-
-    @Test
-    void testOrdenacaoSimples() {
+    void testOrdenacaoPositivos() {
         int[] values = POS_DESORD;
         bSorter.sort(values);
         assertArrayEquals(POS_ORD, values);
+    }
+
+    @Test
+    void testOrdenacaoNegativos() {
+        int[] values = NEG_DESORD;
+        bSorter.sort(values);
+        assertArrayEquals(NEG_ORD, values);
+    }
+
+    @Test
+    void testSize() {
+        int[] values = GRANDE_DESORD;
+        bSorter.sort(values);
+        assertArrayEquals(GRANDE_ORD, values);
     }
 }
