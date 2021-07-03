@@ -50,7 +50,7 @@ class AppTest {
     }
 
     @Test
-    void testSize() {
+    void testNumerosGrandes() {
         int[] values = GRANDE_DESORD;
         bSorter.sort(values);
         assertArrayEquals(GRANDE_ORD, values);
