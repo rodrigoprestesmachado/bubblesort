@@ -20,17 +20,22 @@ package edu.ifrs.vvs;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-
 /**
  * Unit test for simple App.
  */
+
 class AppTest {
     /**
      * Rigorous Test.
      */
-    BubbleSort bolha = new BubbleSort();
+    private static final int[] DESORDENADO = {2, 1, 4, 3};
+    private static final int[] ORDENADO = {1, 2, 3, 4};
+    private BubbleSort bolha = new BubbleSort();
+
     @Test
     void testApp() {
-        assertArrayEquals((new int[]{1,2,3,4}), bolha.sort(new int[]{1,4,3,2}));
+        int[] values = DESORDENADO;
+        bolha.sort(values);
+        assertArrayEquals(ORDENADO, values);
     }
 }
