@@ -22,10 +22,7 @@ jobs:
       - run:
           name: Test
           command: mvn test
-       # run Failsafe!
-      - run:
-          name: Verify
-          command: mvn verify
+
 
 workflows:
   # Below is the definition of your workflow.
