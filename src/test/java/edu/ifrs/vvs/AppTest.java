@@ -17,9 +17,10 @@
 
 package edu.ifrs.vvs;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -34,7 +35,7 @@ class AppTest {
 
     @BeforeEach
     public void init() {
-        ordenador= Mockito.mock(BubbleSort.class);
+        ordenador = Mockito.mock(BubbleSort.class);
     }
 
     @Test
