@@ -60,9 +60,10 @@ class AppTest {
     @Test
     @SuppressWarnings("checkstyle:magicnumber")
     void testeOrdenacao() {
+        BubbleSort ord = new BubbleSort();
         int[] valores = {44, 77, 3, 26, 16};
         int[] ordemEsperada = {3, 16, 26, 44, 77};
-        ordenador.sort(valores);
+        ord.sort(valores);
         assertArrayEquals(ordemEsperada, valores);
 
     }
