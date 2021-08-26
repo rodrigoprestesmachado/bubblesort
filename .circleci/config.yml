@@ -24,7 +24,7 @@ jobs:
           command: mvn test
        # run Failsafe!
       - run:
-          name: Test
+          name: Verify
           command: mvn verify
 
 workflows:
