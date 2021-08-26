@@ -43,23 +43,32 @@ class AppTest {
         assertEquals(1, 1);
     }
 
+    /**
+     * Testing if the vector is empty.
+     */
     @Test
-    void testeVetorVazio() {
+    void testEmptyVector() {
         int[] valores = {};
         ordenador.sort(valores);
     }
 
+    /**
+     * Testing if the vector has only one element.
+     */
     @Test
     @SuppressWarnings("checkstyle:magicnumber")
-    void testeVetorUmElemento() {
+    void testVectorWithAnElement() {
         int[] valores = {33};
         ordenador.sort(valores);
         assertArrayEquals(new int[] {33}, valores);
     }
 
+    /**
+     * Testing ordering in normal situation.
+     */
     @Test
     @SuppressWarnings("checkstyle:magicnumber")
-    void testeOrdenacao() {
+    void testOrdering() {
         BubbleSort ord = new BubbleSort();
         int[] valores = {44, 77, 3, 26, 16};
         int[] ordemEsperada = {3, 16, 26, 44, 77};
