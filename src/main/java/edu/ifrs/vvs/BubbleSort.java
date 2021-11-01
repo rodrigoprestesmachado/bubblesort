@@ -83,8 +83,12 @@ public class BubbleSort {
      * @param values the array
      */
     public void show(int... values) {
-        for (int num : values) {
+        for (int num : values) { 
             System.out.print(num + " ");
         }
+    }
+
+    public int showFirstResult(int... values) {
+        return values[0];
     }
 }
