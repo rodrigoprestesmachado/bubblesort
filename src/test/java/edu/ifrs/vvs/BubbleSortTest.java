@@ -15,7 +15,7 @@ public class BubbleSortTest {
   int[] values = {3, 2, 1};
 
   @Test
-  @DisplayName("Certo: arrays igual e em ordem")
+  @DisplayName("Certo: array igual e na ordem")
   public void bubbleSortTestRight() {
     bubbleSort.sort(values);
     assertArrayEquals(new int[]{1, 2, 3}, values);
