@@ -17,8 +17,10 @@
 
 package edu.ifrs.vvs;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -28,8 +30,44 @@ class AppTest {
     /**
      * Rigorous Test.
      */
+
+    private BubbleSort bubble = new BubbleSort();
+
     @Test
     void testApp() {
         assertEquals(1, 1);
     }
+
+    @Test
+    void testaComUmValor() {
+        int[] umValor = {12};
+        bubble.sort(umValor);
+        int [] testador = {12};
+        assertArrayEquals(umValor, testador);
+    }
+
+    @Test
+    void testaComMaisValores(){
+        int [] povoado = {12, 23, 7, 11};
+        bubble.sort(povoado);
+        int [] testador = {7,11,12,23};
+        assertArrayEquals(povoado,testador);
+    }
+
+    @Test
+    void testaMostrarSemOrganizarComVariosValores(){
+        int [] povoado = {12, 23, 7, 11};
+        bubble.show(povoado);
+        int [] testador = {12, 23, 7, 11};
+        assertArrayEquals(povoado,testador);
+    }
+
+    @Test
+    void testaMostrarSemOrganizarComUmValor(){
+        int [] umValor = {1};
+        bubble.show(umValor);
+        int [] testador = {1};
+        assertArrayEquals(umValor, testador);
+    }
+
 }
