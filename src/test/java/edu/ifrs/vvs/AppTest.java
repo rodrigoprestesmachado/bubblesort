@@ -30,6 +30,8 @@ class AppTest {
      */
     @Test
     void testApp() {
-        assertEquals(1, 1);
+        int expected = 1;
+        int actual = 1;
+        assertEquals(expected, actual);
     }
 }
