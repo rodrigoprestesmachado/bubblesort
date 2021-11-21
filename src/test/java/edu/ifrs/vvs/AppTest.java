@@ -31,7 +31,7 @@ class AppTest {
     /**
      * Rigorous Test.
      */
-    private BubbleSort ordenador = new BubbleSort();
+    private BubbleSort ordenador;
 
     @BeforeEach
     public void init() {
