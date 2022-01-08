@@ -33,10 +33,10 @@ class AppTest {
      */
     private BubbleSort ordenador;
 
-    //Mock
     @BeforeEach
     public void init() {
-        ordenador = Mockito.mock(BubbleSort.class);
+        ordenador = new BubbleSort();
+        /** Mockito.mock(BubbleSort.class); */
     }
 
     @Test
@@ -59,9 +59,9 @@ class AppTest {
     @Test
     @SuppressWarnings("checkstyle:magicnumber")
     void testVectorWithAnElement() {
-        int[] valores = {33};
+        int[] valores = { 33 };
         ordenador.sort(valores);
-        assertArrayEquals(new int[] {33}, valores);
+        assertArrayEquals(new int[] { 33 }, valores);
     }
 
     /**
@@ -70,11 +70,50 @@ class AppTest {
     @Test
     @SuppressWarnings("checkstyle:magicnumber")
     void testOrdering() {
-        BubbleSort ord = new BubbleSort();
-        int[] valores = {44, 77, 3, 26, 16};
-        int[] ordemEsperada = {3, 16, 26, 44, 77};
-        ord.sort(valores);
+        int[] valores = { 44, 77, 3, 26, 16 };
+        int[] ordemEsperada = { 3, 16, 26, 44, 77 };
+        ordenador.sort(valores);
         assertArrayEquals(ordemEsperada, valores);
-
     }
+
+    /**
+     * Testing ordering with duplicates values.
+     */
+    @Test
+    @SuppressWarnings("checkstyle:magicnumber")
+    void testOrderingWithDuplicates() {
+        int[] valores = { 44, 77, 3, 26, 16, 44, 77 };
+        int[] ordemEsperada = { 3, 16, 26, 44, 44, 77, 77 };
+        ordenador.sort(valores);
+        assertArrayEquals(ordemEsperada, valores);
+    }
+
+    /**
+     * Testing ordering with negative values.
+     */
+    @Test
+    @SuppressWarnings("checkstyle:magicnumber")
+    void testOrderingWithNegativeValues() {
+        int[] valores = { -44, -77, -3, -26, -16 };
+        int[] ordemEsperada = { -77, -44, -26, -16, -3 };
+        ordenador.sort(valores);
+        assertArrayEquals(ordemEsperada, valores);
+    }
+
+    /**
+     * Test not functional
+     * 
+     * @Test
+     *       @SuppressWarnings("checkstyle:magicnumber")
+     *       void testOrderingWithMock() {
+     *       int[] valores = {-44, -77, -3, -26, -16};
+     *       int[] ordemEsperada = {-77, -44, -26, -16, -3};
+     *       ordenador.sort(valores);
+     *       Mockito.verify(ordenador).sort(valores);
+     *       Mockito.verify(ordenador, Mockito.times(1)).sort(valores);
+     *       assertArrayEquals(ordemEsperada, valores);
+     * 
+     *       }
+     */
+
 }
