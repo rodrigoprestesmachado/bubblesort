@@ -17,8 +17,11 @@
 
 package edu.ifrs.vvs;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+/** import org.mockito.Mockito; */
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -28,8 +31,87 @@ class AppTest {
     /**
      * Rigorous Test.
      */
+    private BubbleSort ordenador;
+
+    @BeforeEach
+    public void init() {
+        ordenador = new BubbleSort();
+        /** Mockito.mock(BubbleSort.class); */
+    }
+
     @Test
     void testApp() {
         assertEquals(1, 1);
     }
+
+    /**
+     * Testing if the vector is empty.
+     */
+    @Test
+    void testEmptyVector() {
+        int[] valores = {};
+        ordenador.sort(valores);
+    }
+
+    /**
+     * Testing if the vector has only one element.
+     */
+    @Test
+    @SuppressWarnings("checkstyle:magicnumber")
+    void testVectorWithAnElement() {
+        int[] valores = {33};
+        ordenador.sort(valores);
+        assertArrayEquals(new int[] {33}, valores);
+    }
+
+    /**
+     * Testing ordering in normal situation.
+     */
+    @Test
+    @SuppressWarnings("checkstyle:magicnumber")
+    void testOrdering() {
+        int[] valores = {44, 77, 3, 26, 16};
+        int[] ordemEsperada = {3, 16, 26, 44, 77};
+        ordenador.sort(valores);
+        assertArrayEquals(ordemEsperada, valores);
+    }
+
+    /**
+     * Testing ordering with duplicates values.
+     */
+    @Test
+    @SuppressWarnings("checkstyle:magicnumber")
+    void testOrderingWithDuplicates() {
+        int[] valores = {44, 77, 3, 26, 16, 44, 77};
+        int[] ordemEsperada = {3, 16, 26, 44, 44, 77, 77};
+        ordenador.sort(valores);
+        assertArrayEquals(ordemEsperada, valores);
+    }
+
+    /**
+     * Testing ordering with negative values.
+     */
+    @Test
+    @SuppressWarnings("checkstyle:magicnumber")
+    void testOrderingWithNegativeValues() {
+        int[] valores = {-44, -77, -3, -26, -16};
+        int[] ordemEsperada = {-77, -44, -26, -16, -3};
+        ordenador.sort(valores);
+        assertArrayEquals(ordemEsperada, valores);
+    }
+
+    /**
+     * Test not functional
+     * @Test
+     *       @SuppressWarnings("checkstyle:magicnumber")
+     *       void testOrderingWithMock() {
+     *       int[] valores = {-44, -77, -3, -26, -16};
+     *       int[] ordemEsperada = {-77, -44, -26, -16, -3};
+     *       ordenador.sort(valores);
+     *       Mockito.verify(ordenador).sort(valores);
+     *       Mockito.verify(ordenador, Mockito.times(1)).sort(valores);
+     *       assertArrayEquals(ordemEsperada, valores);
+     *       }
+     */
+
 }
