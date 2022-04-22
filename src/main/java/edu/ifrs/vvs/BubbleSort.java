@@ -33,7 +33,7 @@ public class BubbleSort {
      *
      * @param v - Vetor que será ordenado.
      */
-    public void sort(int... v) {
+    public int[] sort(int... v) {
         // for utilizado para controlar a quantidade de vezes que o vetor será ordenado.
         for (int i = 0; i < v.length - 1; i++) {
             // for utilizado para ordenar o vetor.
@@ -49,6 +49,7 @@ public class BubbleSort {
                 }
             }
         }
+        return v;       // ESSA LINHA EU COLOQUEI PRA TESTAR ESSE METODO SORT
     }
 
     /**
@@ -71,7 +72,7 @@ public class BubbleSort {
      *
      * @return the size of the array
      */
-    private int size() {
+    public int size() {                        //MUDEI DE private PARA public PARA FAZER O TESTE
         System.out.print("Size of array: ");
         int size = Integer.valueOf(this.scanner.next());
         return size;
