@@ -19,7 +19,8 @@ package edu.ifrs.vvs;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Unit test for simple App.
@@ -28,8 +29,47 @@ class AppTest {
     /**
      * Rigorous Test.
      */
+
+    private BubbleSort sorteador = new BubbleSort();
+
     @Test
-    void testApp() {
-        assertEquals(1, 1);
+    void testandoComValorVazio() {
+        final int[] valores = {};
+        final int[] arrayEsperado = {};
+
+        sorteador.sort(valores);
+        assertArrayEquals(arrayEsperado, valores);
+    }
+
+    @Test
+    void testandoComDoisValores() {
+        final int[] valores = {2, 1};
+        final int[] arrayEsperado = {1, 2};
+
+        sorteador.sort(valores);
+        assertArrayEquals(arrayEsperado, valores);
+    }
+
+    @Test
+    void testandoComQuatroValores() {
+        final int[] valores = {99, 2, 1, -50};
+        final int[] arrayEsperado = {-50, 1, 2, 99};
+
+        sorteador.sort(valores);
+        assertArrayEquals(arrayEsperado, valores);
+    }
+
+    @Test
+    void testandoComOitoValores() {
+        final int[] valores = {99, 2, 1, -50, -25, 30, -60, 41};
+        final int[] arrayEsperado = {-60, -50, -25, 1, 2, 30, 41, 99};
+
+        sorteador.sort(valores);
+        assertArrayEquals(arrayEsperado, valores);
+    }
+
+    @Test
+    void testandoValorNulo() {
+        assertThrows(NullPointerException.class, () -> sorteador.sort(null));
     }
 }
