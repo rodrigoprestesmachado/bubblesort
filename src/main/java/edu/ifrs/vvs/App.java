@@ -35,6 +35,8 @@ public final class App {
         BubbleSort bs = new BubbleSort();
         int[] values = bs.read();
         bs.sort(values);
-        bs.show(values);
+        //bs.show(values);
+        System.out.println(bs.showFirstResult(values));
+
     }
 }
