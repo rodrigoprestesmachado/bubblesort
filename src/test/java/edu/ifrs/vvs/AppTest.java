@@ -19,17 +19,54 @@ package edu.ifrs.vvs;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Unit test for simple App.
  */
 class AppTest {
+
+    private static final int[] NULL = null;
+    private static final int[] ONENUMBER = {42};
+    private static final int[] UNORDERED_POSITIVE_NUMBERS = {30,1,12,3,10,25};
+    private static final int[] ORDERED_POSITIVE_NUMBERS = {1,3,10,12,25,30};
+    private static final int[] UNORDERED_NEGATIVE_NUMBERS = {-3,-5,-2};
+    private static final int[] ORDERED_NEGATIVE_NUMBERS = {-2,-3,-5};
+
+    BubbleSort sort = new BubbleSort();
+
     /**
      * Rigorous Test.
      */
     @Test
     void testApp() {
         assertEquals(1, 1);
+    }
+
+    @Test
+    void testNull() {
+        assertThrows(NullPointerException.class, () -> sort.sort(NULL));
+    }
+
+    
+    @Test
+    void testOneNumber() {
+        sort.sort(ONENUMBER);
+        assertArrayEquals(ONENUMBER, sort.read());
+    }
+
+    
+    @Test
+    void testPositive() {
+        sort.sort(UNORDERED_POSITIVE_NUMBERS);
+        assertArrayEquals(ORDERED_POSITIVE_NUMBERS, sort.read());    
+    
+    }
+    @Test
+    void testNegative() {
+        sort.sort(UNORDERED_NEGATIVE_NUMBERS);
+        assertArrayEquals(ORDERED_NEGATIVE_NUMBERS, sort.read());
     }
 }
