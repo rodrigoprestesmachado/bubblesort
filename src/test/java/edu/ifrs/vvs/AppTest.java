@@ -17,19 +17,90 @@
 
 package edu.ifrs.vvs;
 
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
-/**
- * Unit test for simple App.
- */
+
 class AppTest {
-    /**
-     * Rigorous Test.
-     */
+
+
     @Test
-    void testApp() {
-        assertEquals(1, 1);
+    @DisplayName("test 1 elemento")
+    @Order(1)
+    void testAppOneElement() {
+        BubbleSort buuble = new BubbleSort();
+        int v[] = {1};
+        int v2[] = {1};
+        buuble.sort(v);
+        assertArrayEquals(v, v2);
+    }
+
+    @Test
+    @DisplayName("test 2 elementos")
+    @Order(2)
+    void testAppTwoElements() {
+        BubbleSort buuble = new BubbleSort();
+        int v[] = {1, 2};
+        int v2[] = {1, 2};
+        buuble.sort(v);
+        assertArrayEquals(v, v2);
+    }
+
+    @Test
+    @DisplayName("test 2 elementos invertidos")
+    @Order(3)
+    void testApp2ElementsReverse() {
+        BubbleSort buuble = new BubbleSort();
+        int v[] = {2, 1};
+        int v2[] = {1, 2};
+        buuble.sort(v);
+        assertArrayEquals(v, v2);
+    }
+
+    @Test
+    @DisplayName("test More elementos sortidos")
+    @Order(4)
+    void testAppMoreElementsSorted() {
+        BubbleSort buuble = new BubbleSort();
+        int v[] = {2, 1, 5, 4, 3, 8, 7, 6};
+        int v2[] = {1, 2, 3, 4, 5, 6, 7, 8};
+        buuble.sort(v);
+        assertArrayEquals(v, v2);
+    } 
+
+    @Test
+    @DisplayName("test elementos sortidos faltando")
+    @Order(1)
+    void testAppMissingSomeElementsSorted() {
+        BubbleSort buuble = new BubbleSort();
+        int v[] = {2, 1, 5, 3, 7, 6};
+        int v2[] = {1, 2, 3, 5, 6, 7};
+        buuble.sort(v);
+        assertArrayEquals(v, v2);
+    }
+
+    @Test
+    @DisplayName("test elementos sortidos faltando com zero")
+    @Order(2)
+    void testAppElementsSortedwithZero() {
+        BubbleSort buuble = new BubbleSort();
+        int v[] = {2, 1, 18015, 5, 3, 0, 6};
+        int v2[] = {0, 1, 2, 3, 5, 6, 18015};
+        buuble.sort(v);
+        assertArrayEquals(v, v2);
+    }
+
+    @Test
+    @DisplayName("test elementos sortidos faltando com zero e negativos")
+    @Order(3)
+    void testAppElementsSortedwithZeroandNegatives() {
+        BubbleSort buuble = new BubbleSort();
+        int v[] = {2, 1, 5, -10, 3, 1589, 0, 6};
+        int v2[] = {-10, 0, 1, 2, 3, 5, 6, 1589};
+        buuble.sort(v);
+        assertArrayEquals(v, v2);
     }
 }
