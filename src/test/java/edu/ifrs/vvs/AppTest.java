@@ -29,17 +29,16 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 class AppTest {
 
     private static final int[] NULL = null;
-    private static final int[] ONENUMBER = {42};
-    private static final int[] UNORDERED_POSITIVE_NUMBERS = {30,1,12,3,10,25};
-    private static final int[] ORDERED_POSITIVE_NUMBERS = {1,3,10,12,25,30};
-    private static final int[] UNORDERED_NEGATIVE_NUMBERS = {-3,-5,-2};
-    private static final int[] ORDERED_NEGATIVE_NUMBERS = {-2,-3,-5};
+    private static final int[] UNORDERED_POSITIVE_NUMBERS = {30, 1, 12, 3, 10, 25};
+    private static final int[] ORDERED_POSITIVE_NUMBERS = {1, 3, 10, 12, 25, 30};
+    private static final int[] UNORDERED_NEGATIVE_NUMBERS = {-3, -5, -2};
+    private static final int[] ORDERED_NEGATIVE_NUMBERS = {-5, -3, -2};
 
-    BubbleSort sort = new BubbleSort();
+    private BubbleSort sort = new BubbleSort();
 
     /**
-     * Rigorous Test.
-     */
+     Rigorous Test.
+    **/
     @Test
     void testApp() {
         assertEquals(1, 1);
@@ -50,23 +49,24 @@ class AppTest {
         assertThrows(NullPointerException.class, () -> sort.sort(NULL));
     }
 
-    
     @Test
     void testOneNumber() {
+        final int[] EXPECTED = {42};
+        final int[] ONENUMBER = {42};
         sort.sort(ONENUMBER);
-        assertArrayEquals(ONENUMBER, sort.read());
+        assertArrayEquals(ONENUMBER, EXPECTED);
     }
 
-    
     @Test
     void testPositive() {
         sort.sort(UNORDERED_POSITIVE_NUMBERS);
-        assertArrayEquals(ORDERED_POSITIVE_NUMBERS, sort.read());    
-    
+        assertArrayEquals(ORDERED_POSITIVE_NUMBERS, UNORDERED_POSITIVE_NUMBERS);
     }
+
     @Test
     void testNegative() {
         sort.sort(UNORDERED_NEGATIVE_NUMBERS);
-        assertArrayEquals(ORDERED_NEGATIVE_NUMBERS, sort.read());
+        assertArrayEquals(ORDERED_NEGATIVE_NUMBERS, UNORDERED_NEGATIVE_NUMBERS);
     }
+
 }

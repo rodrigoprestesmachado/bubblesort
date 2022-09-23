@@ -53,9 +53,9 @@ public class BubbleSort {
 
     /**
      * Reads the values.
-     *
      * @return array of int
      */
+
     public int[] read() {
         int size = this.size();
         int[] values = new int[size];
@@ -67,10 +67,10 @@ public class BubbleSort {
     }
 
     /**
-     * Reads the size of the array.
-     *
-     * @return the size of the array
+      Reads the size of the array.
+      return the size of the array
      */
+
     private int size() {
         System.out.print("Size of array: ");
         int size = Integer.valueOf(this.scanner.next());
@@ -78,10 +78,10 @@ public class BubbleSort {
     }
 
     /**
-     * Shows the array.
-     *
-     * @param values the array
+      Shows the array.
+      param values the array
      */
+
     public void show(int... values) {
         for (int num : values) {
             System.out.print(num + " ");
