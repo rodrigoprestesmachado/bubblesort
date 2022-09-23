@@ -1,14 +1,31 @@
+/**
+ * @License
+ * Copyright 2020 Bubble Sort Application
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package edu.ifrs.vvs;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 public class BubbleSortTest {
-    BubbleSort bubbleSort;
-    
+    private BubbleSort bubbleSort;
+
     @BeforeEach
     void prepareTest() {
         bubbleSort = new BubbleSort();
@@ -17,8 +34,8 @@ public class BubbleSortTest {
     @Test
     void sortEmptyArray() {
         // Arrange
-        int[] array = {};
-        int[] expectedArray = {};
+        final int[] array = {};
+        final int[] expectedArray = {};
 
         // Act
         bubbleSort.sort(array);
@@ -30,8 +47,8 @@ public class BubbleSortTest {
     @Test
     void sortOneItemArray() {
         // Arrange
-        int[] array = { 0 };
-        int[] expectedArray = { 0 };
+        final int[] array = {0};
+        final int[] expectedArray = {0};
 
         // Act
         bubbleSort.sort(array);
@@ -43,8 +60,8 @@ public class BubbleSortTest {
     @Test
     void sortAllPositiveArray() {
         // Arrange
-        int[] array = { 8, 3, 5, 1};
-        int[] expectedArray = { 1, 3, 5, 8 };
+        final int[] array = {8, 3, 5, 1};
+        final int[] expectedArray = {1, 3, 5, 8};
 
         // Act
         bubbleSort.sort(array);
@@ -56,8 +73,8 @@ public class BubbleSortTest {
     @Test
     void sortAllNegativeArray() {
         // Arrange
-        int[] array = { -8, -3, -5, -1};
-        int[] expectedArray = { -8, -5, -3, -1 };
+        final int[] array = {-8, -3, -5, -1};
+        final int[] expectedArray = {-8, -5, -3, -1};
 
         // Act
         bubbleSort.sort(array);
@@ -69,8 +86,8 @@ public class BubbleSortTest {
     @Test
     void sortMixedArray() {
         // Arrange
-        int[] array = { 8, -3, 5, 0, -1};
-        int[] expectedArray = { -3, -1, 0, 5, 8 };
+        final int[] array = {8, -3, 5, 0, -1};
+        final int[] expectedArray = {-3, -1, 0, 5, 8};
 
         // Act
         bubbleSort.sort(array);
@@ -81,7 +98,7 @@ public class BubbleSortTest {
 
     @Test
     void sortNullArray() {
-        int[] array = null;
+        final int[] array = null;
         Class<NullPointerException> expectedException = NullPointerException.class;
 
         assertThrows(expectedException, () -> bubbleSort.sort(array));
