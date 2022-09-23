@@ -28,6 +28,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  */
 class AppTest {
 
+    private static final int[] EXPECTED = {42};
+    private static final int[] ONENUMBER = {42};
     private static final int[] NULL = null;
     private static final int[] UNORDERED_POSITIVE_NUMBERS = {30, 1, 12, 3, 10, 25};
     private static final int[] ORDERED_POSITIVE_NUMBERS = {1, 3, 10, 12, 25, 30};
@@ -51,8 +53,6 @@ class AppTest {
 
     @Test
     void testOneNumber() {
-        final int[] EXPECTED = {42};
-        final int[] ONENUMBER = {42};
         sort.sort(ONENUMBER);
         assertArrayEquals(ONENUMBER, EXPECTED);
     }
