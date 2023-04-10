@@ -87,4 +87,9 @@ public class BubbleSort {
             System.out.print(num + " ");
         }
     }
+
+    public int showFirstResult(int... values) {
+        return values[0];
+    }
+ 
 }
