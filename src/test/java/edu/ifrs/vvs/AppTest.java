@@ -19,12 +19,18 @@ package edu.ifrs.vvs;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 
 /**
  * Unit test for simple App.
  */
 class AppTest {
+
     /**
      * Rigorous Test.
      */
@@ -32,4 +38,31 @@ class AppTest {
     void testApp() {
         assertEquals(1, 1);
     }
+
+    @Test
+    @DisplayName("Teste funcionamento regular")
+    void testBubbleOrdenado() {
+        int [] entrada = {2, 5, 3, 6, 4, 1};
+        int [] saida = {1, 2, 3, 4, 5, 6};
+        new BubbleSort().sort(entrada);
+        assertArrayEquals(entrada, saida, "Muito bem, Taíse!");
+    }
+
+    @Test
+    @DisplayName("Teste com valor null")
+    void testBubbleValorNull() {
+        Assertions.assertThrows(NullPointerException.class, () -> {
+            int [] entradaNull = null;
+            new BubbleSort().sort(entradaNull);
+        });
+    }
+
+    @Test
+    @DisplayName("Teste com array vazio")
+    void testBubbleArrayVazio() {
+        int [] entrada = {};
+        int [] saida = {};
+        Assertions.assertArrayEquals(entrada, saida);
+    }
 }
+
