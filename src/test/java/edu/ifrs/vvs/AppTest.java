@@ -19,6 +19,7 @@ package edu.ifrs.vvs;
 
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
@@ -28,8 +29,14 @@ class AppTest {
     /**
      * Rigorous Test.
      */
+    private static final int[] DESORDENANDO = {2, 1, 4, 3, 6, 5};
+    private static final int[] ORDENADO = {1, 2, 3, 4, 5, 6};
+    private BubbleSort Bubble = new BubbleSort();
+
     @Test
     void testApp() {
-        assertEquals(1, 1);
+        int[] values = DESORDENANDO;
+        Bubble.sort(values);
+        assertArrayEquals(ORDENADO, values);
     }
 }
