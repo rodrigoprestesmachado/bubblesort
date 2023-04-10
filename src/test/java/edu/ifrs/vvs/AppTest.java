@@ -17,9 +17,21 @@
 
 package edu.ifrs.vvs;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTimeout;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * Unit test for simple App.
@@ -28,8 +40,74 @@ class AppTest {
     /**
      * Rigorous Test.
      */
+    private static <int> bubblesort;
+
+    @BeforeAll
+    p//preciso inicializar este inferno, como faço isso?
+    
     @Test
     void testApp() {
         assertEquals(1, 1);
+    }//esse aqui o professor já fez, precisa deixar?
+
+    @Test
+    void testSortArrayLenght(){
+        int [] expectedlenght = {1,2,3,4,5,6,7,9,10};
+        int [] actuallenght = {1,2,3,4,5,6,7,8,9,10};
+
+
+        assertEquals( 9,  9, "o tamanho do bubblesort não é igual...");
+
     }
+
+    @Test
+    void testSortArrayEquals(){
+        int [] expectedequals = {1,2,3,4,5,6,7,8,9,10};
+        int [] actualequals = {10,9,8,7,6,5,4,3,2,1};
+        new BubbleSort().sort(expectedequals);
+        assertArrayEquals(expectedequals, actualequals, "O conteúdo do bubblesort não é igual");
+
+    }
+    //Testando o método do bubblesort
+    @Test
+    void testSortNull(){
+        int [] expectednull = {};
+        int [] actualnull = {};
+        assertNull(getClass(), "este bubblesort deveria retornar nulo, mas não está...");
+
+    }
+
+    @Test
+    void testSortNotSame(){
+
+    }
+    
+    @Test
+    void testSortBig(){
+
+    }
+   
+    @Test
+    void testSortCharacter(){
+
+    }
+ 
+    @Test
+    @Timeout(value = 500, unit = TimeUnit.MILLISECONDS) //testar com sleep
+    void testSortTimeout(){
+        assertFalse(false, null);
+        assertNotEquals(null, null, null);
+        assertNotSame(getClass(), getClass(), null);
+        assertNotNull(getClass(), null);
+        assertTimeout(null, null, null);
+        
+
+
+    }
+    //mandar array vazio
+    //mandar array grande
+    //mandar array com caractere
+    //Teste de timeout @Timeout 
+
+
 }
