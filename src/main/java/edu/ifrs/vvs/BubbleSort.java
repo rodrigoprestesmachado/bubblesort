@@ -19,6 +19,8 @@ package edu.ifrs.vvs;
 
 import java.util.Scanner;
 
+//notas sobre o bubblesort: "consiste em percorrer os N elementos de um vetor, para cada vez percorrida, todos os elementos são comparados com o seu próximo"
+
 /**
  * Bubble Sort.
  */
@@ -39,7 +41,7 @@ public class BubbleSort {
             // for utilizado para ordenar o vetor.
             for (int j = 0; j < v.length - 1 - i; j++) {
                 /*
-                 * Se o valor da posição atual do vetor for maior que o proximo valor, então
+                 * Se o valor da posição atual do vetor for maior que o próximo valor, então
                  * troca os valores de lugar no vetor.
                  */
                 if (v[j] > v[j + 1]) {
@@ -49,7 +51,7 @@ public class BubbleSort {
                 }
             }
         }
-    }
+    } // exemplo de teste: verificar se o sort está sendo feito de forma correta
 
     /**
      * Reads the values.
@@ -64,7 +66,7 @@ public class BubbleSort {
             values[i] = Integer.valueOf(this.scanner.next());
         }
         return values;
-    }
+    } //exemplo de teste: confirmar se o valor que é lido é igual ao de entrada
 
     /**
      * Reads the size of the array.
@@ -75,7 +77,7 @@ public class BubbleSort {
         System.out.print("Size of array: ");
         int size = Integer.valueOf(this.scanner.next());
         return size;
-    }
+    } // exemplo de teste: confirmar se o tamanho do array é o mesmo que o verdadeiro, 
 
     /**
      * Shows the array.
@@ -87,4 +89,4 @@ public class BubbleSort {
             System.out.print(num + " ");
         }
     }
-}
+} //exemplo de teste: mostrar se o array está retornando corretamente o seu conteúdo
